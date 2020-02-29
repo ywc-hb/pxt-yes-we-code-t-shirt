@@ -11,12 +11,12 @@ Flèche N --> pins 3 et 10
 Flèche S --> pins 3 et 2     
 Flèche NE --> pins 0 et 1     
 Flèche NW --> pins 0 et 10     
-Flèche SE --> pins 0 et 2     
+Flèche SE --> pins 4 et 2     
 Flèche SW --> pins 4 et 10     
 
 Tirer --> pins 1 et 2     
 Recharger --> pins 1 et 10     
-Pause --> pins 4 et 2     
+Pause --> pins 0 et 2     
 
 (combinaison restante : pins 2 et 10)     
 
