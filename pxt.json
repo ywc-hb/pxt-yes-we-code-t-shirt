@@ -9,7 +9,8 @@
         "main.ts",
         "README.md",
         "AnalogToDigital.ts",
-        "DuringGame.ts"
+        "DuringGame.ts",
+        "ReviveCode.ts"
     ],
     "testFiles": [],
     "supportedTargets": [
