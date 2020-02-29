@@ -2,9 +2,6 @@ radio.setGroup(69);
 let pause_play = false;
 let menu = true;
 
-
-
-
 input.onPinPressed(TouchPin.P0 && TouchPin.P1, function () {
     if (pause_play) {
         radio.sendString("R_play_");
