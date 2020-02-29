@@ -1,5 +1,6 @@
 function testingKeys () {
     let side = "R";
+    let pause = true;
     while (!pause) {
         let pin0: boolean = analog2digital(pins.analogReadPin(AnalogPin.P0));
         let pin1: boolean = analog2digital(pins.analogReadPin(AnalogPin.P1));
@@ -69,6 +70,7 @@ function testingKeys () {
 
         else if (pin4 && pin2) {
             radio.sendString(side + "_pause");
+            pause = false;
         }
 
         basic.pause(100);
