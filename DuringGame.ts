@@ -1,6 +1,6 @@
 function testingKeys () {
     let side = "R";
-    while (true) {
+    while (!pause) {
         let pin0: boolean = analog2digital(pins.analogReadPin(AnalogPin.P0));
         let pin1: boolean = analog2digital(pins.analogReadPin(AnalogPin.P1));
         let pin2: boolean = analog2digital(pins.analogReadPin(AnalogPin.P2));
@@ -8,7 +8,7 @@ function testingKeys () {
         let pin4: boolean = analog2digital(pins.analogReadPin(AnalogPin.P4));
         let pin10: boolean = analog2digital(pins.analogReadPin(AnalogPin.P10));
 
-        //Test des flèches directrices
+        // Voir la correspondance des pins sur le github
         if (!(pin1 && pin2)) {
             if (pin3 && pin4) {
                 radio.sendString(side + "_move_W");
@@ -62,8 +62,13 @@ function testingKeys () {
                 radio.sendString(side + "_shoot_SW");
             }
         }
+
         else if (pin1 && pin10) {
-            radio.sendString(side + "_charg")
+            radio.sendString(side + "_charg");
+        }
+
+        else if (pin4 && pin2) {
+            radio.sendString(side + "_pause");
         }
 
         basic.pause(100);
