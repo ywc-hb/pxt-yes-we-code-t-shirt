@@ -1,9 +1,9 @@
-function analog2digital (pin: number): boolean {
+function analog2digital (pin: number): number {
     let limit: number = 600;
     if (pin > limit) {
-        return (true);
+        return (1);
     }
     else {
-        return (false);
+        return (0);
     }
 }

@@ -1,12 +1,14 @@
 function testingKeys () {
     pause_play = false;
-    while (!pause) {
-        let pin0: boolean = analog2digital(pins.analogReadPin(AnalogPin.P0));
-        let pin1: boolean = analog2digital(pins.analogReadPin(AnalogPin.P1));
-        let pin2: boolean = analog2digital(pins.analogReadPin(AnalogPin.P2));
-        let pin3: boolean = analog2digital(pins.analogReadPin(AnalogPin.P3));
-        let pin4: boolean = analog2digital(pins.analogReadPin(AnalogPin.P4));
-        let pin10: boolean = analog2digital(pins.analogReadPin(AnalogPin.P10));
+    let i = 0;
+    while (!pause_play) {
+        basic.showNumber(1);
+        let pin0: number = analog2digital(pins.analogReadPin(AnalogPin.P0));
+        let pin1: number = analog2digital(pins.analogReadPin(AnalogPin.P1));
+        let pin2: number = analog2digital(pins.analogReadPin(AnalogPin.P2));
+        let pin3: number = analog2digital(pins.analogReadPin(AnalogPin.P3));
+        let pin4: number = analog2digital(pins.analogReadPin(AnalogPin.P4));
+        let pin10: number = analog2digital(pins.analogReadPin(AnalogPin.P10));
 
         // Voir la correspondance des pins sur le github
         if (!(pin1 && pin2)) {
@@ -28,7 +30,7 @@ function testingKeys () {
             else if (pin0 && pin10) {
                 radio.sendString("R_move_NW");
             }
-            else if (pin0 && pin2) {
+            else if (pin4 && pin2) {
                 radio.sendString("R_move_SE");
             }
             else if (pin4 && pin10) {
@@ -36,7 +38,7 @@ function testingKeys () {
             }
         }
 
-        else if (pin1 && pin2) {
+        if (pin1 && pin2) {
             if (pin3 && pin4) {
                 radio.sendString("R_shoot_W");
             }
@@ -55,7 +57,7 @@ function testingKeys () {
             else if (pin0 && pin10) {
                 radio.sendString("R_shoot_NW");
             }
-            else if (pin0 && pin2) {
+            else if (pin4 && pin2) {
                 radio.sendString("R_shoot_SE");
             }
             else if (pin4 && pin10) {
@@ -63,13 +65,14 @@ function testingKeys () {
             }
         }
 
-        else if (pin1 && pin10) {
+        if (pin1 && pin10) {
             radio.sendString("R_charg");
         }
 
-        else if (pin4 && pin2) {
+        if (pin1/* && pin2*/) {
             radio.sendString("R_pause");
             pause_play = true;
+            basic.showNumber(2)
         }
 
         basic.pause(100);
