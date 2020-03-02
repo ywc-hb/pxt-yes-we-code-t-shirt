@@ -1,18 +1,17 @@
 //  /!\ Code pour le t-shirt controlant le personnage de droite /!\
-
 radio.setGroup(69);
-let pause_play = false;
+
+let pause_play = false; //
 let menu = true;
-let code = new ReviveCode()
-//control.inBackground(function () {
-//menuChoice() // Choix durant le menu
-//})
+let code = new ReviveCode(); //Crée le code pour revivre
+control.inBackground(function () {
+    menuChoice() // Choix durant le menu
+})
 
 input.onPinPressed(TouchPin.P0 && TouchPin.P2, function () {
     if (pause_play) { //Relancer `testingKeys()` uniquement si le jeu est en pause
         radio.sendString("R_play_"); //Instruction de reprendre le jeu aux autres microbit
         basic.pause(3200); //Temps de synchronisation des microbits
-
         control.inBackground(function () {
             testingKeys();
         })
@@ -45,19 +44,3 @@ radio.onReceivedString(function (receivedString: string) {
         }
     }
 })
-
-
-
-
-
-
-
-
-
-
-
-
-radio.sendString("start_game");
-basic.pause(1000)
-radio.sendString("R_pause")
-//radio.sendString("R_play_");*/
