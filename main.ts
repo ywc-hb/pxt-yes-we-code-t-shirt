@@ -1,3 +1,5 @@
+//  /!\ Code pour le t-shirt controlant le personnage de droite /!\
+
 radio.setGroup(69);
 let pause_play = false;
 let menu = true;
@@ -20,5 +22,8 @@ radio.onReceivedString(function (receivedString: string) {
     else if (receivedString == "start_game") {
         menu = false;
         testingKeys();
+    }
+    else if (receivedString.substr(0, 6) == "R_dead") {
+        pause_play = true;
     }
 })
