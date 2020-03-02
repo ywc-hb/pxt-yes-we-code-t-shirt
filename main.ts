@@ -1,7 +1,7 @@
 //  /!\ Code pour le t-shirt controlant le personnage de droite /!\
 radio.setGroup(69);
 
-let pause_play = false; //
+let pause_play = false; 
 let menu = true;
 let code = new ReviveCode(); //Crée le code pour revivre
 control.inBackground(function () {
