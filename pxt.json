@@ -1,6 +1,5 @@
 {
     "name": "pxt-yes-we-code-t-shirt",
-    "version": "0.3.3",
     "dependencies": {
         "core": "*",
         "radio": "*"
@@ -13,7 +12,6 @@
         "ReviveCode.ts",
         "Menu.ts"
     ],
-    "testFiles": [],
     "supportedTargets": [
         "microbit"
     ],
