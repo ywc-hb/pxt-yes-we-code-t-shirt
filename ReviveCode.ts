@@ -10,7 +10,13 @@ class ReviveCode {
     }
     
     protected sendingCode(): void {
+        let dataSent: string = "R_code";
         
+        for (let i = 0; i < this.code.length; i++) {
+            dataSent += "_" + this.icons.indexOf(this.code[i]);
+        }
+
+        radio.sendString(dataSent);
     }
     
     protected createReviveCode(): (ArrowNames | string)[] {
