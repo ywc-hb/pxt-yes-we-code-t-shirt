@@ -2,7 +2,6 @@ function testingKeys () {
     pause_play = false;
     let i = 0;
     while (!pause_play) {
-        basic.showNumber(1);
         let pin0: number = analog2digital(pins.analogReadPin(AnalogPin.P0));
         let pin1: number = analog2digital(pins.analogReadPin(AnalogPin.P1));
         let pin2: number = analog2digital(pins.analogReadPin(AnalogPin.P2));
@@ -69,10 +68,9 @@ function testingKeys () {
             radio.sendString("R_charg");
         }
 
-        if (pin1/* && pin2*/) {
+        if (pin1 && pin2) {
             radio.sendString("R_pause");
             pause_play = true;
-            basic.showNumber(2)
         }
 
         basic.pause(100);

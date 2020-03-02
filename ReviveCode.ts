@@ -15,7 +15,6 @@ class ReviveCode {
         for (let i = 0; i < this.code.length; i++) {
             dataSent += "_" + this.icons.indexOf(this.code[i]);
         }
-
         radio.sendString(dataSent);
     }
     
@@ -27,7 +26,7 @@ class ReviveCode {
         let tempBefore: number = 0;
         
         for (let i = 0; i < numberOfSymbol; i++) {
-            while (temp != tempBefore) {    
+            while (temp == tempBefore) {    
                 temp = Math.randomRange(0, 10);
             }
             tempBefore = temp;

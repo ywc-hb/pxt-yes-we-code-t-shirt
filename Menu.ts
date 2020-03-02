@@ -5,7 +5,6 @@ function menuChoice () {
         let pin1 = analog2digital(pins.analogReadPin(AnalogPin.P1));
         let pin2 = analog2digital(pins.analogReadPin(AnalogPin.P2));
 
-        basic.showNumber(0);
         if (pin3 && pin10) {
             radio.sendString("R_array_N");
         }
