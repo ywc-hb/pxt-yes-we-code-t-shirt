@@ -2,7 +2,7 @@
 Les données sont envoyés sur le canal 69.
 La puissance du signal est idéalement réglée sur 6 ou 7.
 
-Données envoyés par le t-shirt contrôlant le personnage de droite : 
+Données envoyés par le t-shirt contrôlant le personnage de droite (pour le personnage de gauche, il suffit de remplacer les _R_ en _L_) : 
 
 ### Correspondance touche - combinaison pins ###
 Flèche W --> pins 3 et 4     
@@ -30,16 +30,6 @@ Tirer --> 'R_shoot_' suivi de la direction
 Recharger --> 'R_charg'     
 Pause --> 'R_pause'     
 
-### T-shirt controlant le joueur de gauche ###
-Flèche gauche --> 'L_move_W'     
-Flèche droite --> 'L_move_E'     
-Flèche haut --> 'L_move_N'     
-Flèche bas --> 'L_move_S'     
-
-Tirer --> 'L_shoot'     
-Recharger --> 'L_charg'     
-Pause --> 'L_pause'     
-
 ### Code permettant de revivre ###
 
 La liste des boutons est la suivante (l'ordre est à respecter) :     
@@ -47,3 +37,5 @@ La liste des boutons est la suivante (l'ordre est à respecter) :
 Le code permettant de revivre est envoyé sous la forme suivante :        
     *"R_code_"* suivi directement des indices de la liste de boutons
     (Voici un exemple pour le code *Flèche Nord, Flèche Sud, Tirer, Flèche Est* : *"R_code_0_1_8_2"*)
+
+Lorsque "R_dead" est reçu, le t-shirt teste si le code pour revivre est bien tapé. Si oui, il renvoie "R_reliv" sinon il renvoie "R_kaput"
