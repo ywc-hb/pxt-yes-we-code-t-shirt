@@ -35,7 +35,7 @@ radio.onReceivedString(function (receivedString: string) {
     }
     if (receivedString.substr(0, 6) == "R_dead") {
         pause_play = true; //Quittage du test des touches
-        if (code.testingReviveCode()) {
+        if (code.testingReviveCode()) { //Démarrage du code pour revivre
             code.createReviveCode();
             radio.sendString("R_reliv");
         }
