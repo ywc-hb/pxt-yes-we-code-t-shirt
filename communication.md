@@ -18,7 +18,7 @@ Tirer --> pins 1 et 2
 Recharger --> pins 1 et 10     
 Pause --> pins 0 et 2     
 
-(combinaison restante : pins 2 et 10)     
+(combinaison restante : pins 2 et 10, peut-être pour un bouton de validation)     
 
 ### T-shirt controlant le joueur de droite ###
 Flèche gauche --> 'R_move_W'     
@@ -42,4 +42,8 @@ Pause --> 'L_pause'
 
 ### Code permettant de revivre ###
 
-En cours de développement
+La liste des boutons est la suivante (l'ordre est à respecter) :     
+`[ArrowNames.North, ArrowNames.South, ArrowNames.East, ArrowNames.West, ArrowNames.SouthEast, ArrowNames.SouthWest, ArrowNames.NorthEast, ArrowNames.NorthWest, "T", "R"]`         
+Le code permettant de revivre est envoyé sous la forme suivante :        
+    *"R_code_"* suivi directement des indices de la liste de boutons
+    (Voici un exemple pour le code *Flèche Nord, Flèche Sud, Tirer, Flèche Est* : *"R_code_0_1_8_2"*)
